@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LogNorm</string>
+    <string name="generate">generate</string>
+    <string name="button_text">Get random number</string>
+</resources>
