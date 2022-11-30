@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         randomNumberViewModel = provider[RandomNumberViewModel::class.java]
 
         binding.content.getRandomNum.setOnClickListener {
+            if (binding.content.meanVal.text.isNotEmpty()) {
+                randomNumberViewModel.mean = binding.content.meanVal.text.toString().toDouble()
+            }
+            if (binding.content.varianceValue.text.isNotEmpty()) {
+                randomNumberViewModel.variance =
+                    binding.content.varianceValue.text.toString().toDouble()
+            }
             randomNumberViewModel.onGetRandomNumberClicked()
         }
 
