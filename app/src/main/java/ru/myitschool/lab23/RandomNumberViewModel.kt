@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.Random
+import kotlin.math.exp
 import kotlin.math.sqrt
 
 class RandomNumberViewModel : ViewModel() {
@@ -15,6 +16,6 @@ class RandomNumberViewModel : ViewModel() {
     fun onGetRandomNumberClicked() {
         Log.d("Aboba", mean.toString())
         Log.d("Aboba", variance.toString())
-        randomNumber.value = random.nextGaussian() * sqrt(variance) + mean
+        randomNumber.value = exp(random.nextGaussian() * sqrt(variance) + mean)
     }
 }
